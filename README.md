@@ -16,13 +16,14 @@ El objetivo del proyecto es validar el flujo de selección de productos y proces
 * Cucumber
 * Maven
 * Screenplay Pattern
+* Jenkins
 
 ---
 
 ## Escenarios automatizados
 
 1. Selección de chaquetas y tallas.
-2. Validación de proceso completo de una compra.
+2. Validación del proceso completo de compra.
 3. Escenario parametrizado consumiendo datos desde CSV.
 
 ---
@@ -31,7 +32,7 @@ El objetivo del proyecto es validar el flujo de selección de productos y proces
 
 El proyecto está organizado siguiendo el patrón **Screenplay**, separando responsabilidades para mejorar la mantenibilidad y reutilización del código.
 
-```id="z0z3uq"
+```
 ├── pom.xml
 ├── README.md
 ├── serenity.properties
@@ -52,18 +53,24 @@ El proyecto está organizado siguiendo el patrón **Screenplay**, separando resp
           └── resources
                ├── data
                ├── features
-               └── serenity.conf
+               ├── serenity.conf
+               └── Jenkinsfile
 ```
 
-### Archivos principales
+---
 
-| Archivo             | Descripción                                                   |
-| ------------------- | ------------------------------------------------------------- |
-| pom.xml             | Configuración del proyecto y dependencias manejadas con Maven |
-| README.md           | Documentación del proyecto                                    |
-| serenity.properties | Configuración del framework Serenity                          |
+## Archivos principales
 
-### Carpetas principales
+| Archivo             | Descripción                                                    |
+| ------------------- | -------------------------------------------------------------- |
+| pom.xml             | Configuración del proyecto y dependencias manejadas con Maven  |
+| README.md           | Documentación del proyecto                                     |
+| serenity.properties | Configuración del framework Serenity                           |
+| Jenkinsfile         | Configuración del pipeline de integración continua con Jenkins |
+
+---
+
+## Carpetas principales
 
 | Carpeta         | Descripción                                     |
 | --------------- | ----------------------------------------------- |
@@ -79,7 +86,8 @@ El proyecto está organizado siguiendo el patrón **Screenplay**, separando resp
 | data            | Archivos de datos de prueba (CSV)               |
 | features        | Escenarios escritos en Gherkin                  |
 
-```
+---
+
 ## Ejecución del proyecto
 
 Para ejecutar las pruebas utilizar el siguiente comando:
@@ -107,6 +115,9 @@ Estos reportes incluyen:
 
 ---
 
-## Autor
+## Integración continua
 
-Proyecto desarrollado como ejercicio de automatización QA utilizando Serenity BDD con patrón Screenplay.
+El proyecto incluye un **Jenkinsfile** para ejecutar las pruebas automáticamente en un pipeline de **Jenkins**, permitiendo integrar la ejecución de pruebas dentro de un flujo de **CI/CD**.
+
+---
+
